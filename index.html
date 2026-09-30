@@ -14,3 +14,39 @@ Senha
 Ainda não possui uma conta?
 Cadastre-se
 -->
+<!DOCTYPE html> 
+<html lang="pt-br">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Whack-a-Mole</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="imagens/icon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <img class="logo" src="imagens/logo.png" alt="Whack-a-Mole">
+        </header>
+        <main class="caixa-login">
+                <h1>Entrar</h1>
+                <form class="form-login">
+                    <div class="campo">
+                        <label for="usuario">Usuário:</label>
+                        <input type="text" id="usuario" name="usuario" required>
+                    </div>
+                    <div class="campo">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
+                    <a href="jogo.html">entrar</a>
+                </form>
+                <section class="novo-cadastro">
+                    <p>Não possui uma conta?</p> 
+                    <a href="cadastro.html">Cadastre-se</a>
+                </section>
+        </main>
+    </body>
+</html>
