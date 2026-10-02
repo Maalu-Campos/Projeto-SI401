@@ -16,7 +16,7 @@ header {
     max-width: 650px;
 }
 
-.caixa-login {
+.caixa {
     width: 565px;
     margin: 45px auto;
     background-color: #ffd166;
@@ -25,14 +25,14 @@ header {
     box-shadow: 0 6px 8px #ff4f79;
 }
 
-.caixa-login h1 {
+.caixa h1 {
     font-size: 64px;
     font-weight: 400;
     text-align: center;
     margin-bottom: 40px;
 }
 
-.form-login {
+.form {
     display: flex;
     flex-direction: column;
     gap:20px ;
@@ -58,13 +58,13 @@ header {
     box-shadow: 0 4px 8px #2f80ed;
 }
 
-.form-login a {
+.form a {
     margin: 20px 0 10px;
     display: inline-block;
     align-self: center;
     background-color:  #00c4a8;
     color: #000000;
-    width: 120px;
+    width: 150px;
     padding: 10px;
     border-radius: 12px;
     font-size: 32px;
@@ -81,7 +81,7 @@ header {
     align-items: center;
     gap: 0;
     margin-top: 20px;
-    
+
     
 }
 
@@ -91,6 +91,26 @@ header {
 }
 
 .novo-cadastro a {
+    color: #000;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+.possui-conta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-top: 20px;
+}
+
+.possui-conta p {
+    margin: 0;
+    font-size: 24px;
+}
+
+.possui-conta a {
     color: #000;
     font-weight: 400;
     font-size: 32px;
