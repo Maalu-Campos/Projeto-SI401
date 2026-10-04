@@ -36,34 +36,66 @@ Username
         <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
+        <header class="cabecalho">
             <img class="logo" src="imagens/logo.png" alt="Whack-a-Mole">
+
+            <nav class="menu">
+                <a href="novo-jogo.html">Jogo</a>
+                <a href="ranking.html">Ranking</a>
+                <a href="perfil.html" class="ativo">Meu perfil</a>
+                <a href="index.html">Sair</a>
+            </nav>
         </header>
-        <main class="caixa">
-                <h1>Perfil</h1>
-                <form class="form">
-                    <div class="campo">
-                        <label for="usuario">Usuário:</label>
-                        <input type="text" id="usuario" name="usuario" required>
-                    </div>
-                    <div class="campo">
-                        <label for="E-mail">E-mail:</label>
-                        <input type="email" id="E-mail" name="E-mail" required>
-                    </div>
-                    <div class="campo">
-                        <label for="telefone">Telefone:</label>
-                        <input type="tel" id="telefone" name="telefone" required>
-                    </div>
-                    <div class="campo">
-                        <label for="Data">Data de Nascimento:</label>
-                        <input type="date" id="data" name="data" required>
-                    </div>
-                      <div class="campo">
-                        <label for="nome">Nome Completo:</label>
-                        <input type="text" id="nome" name="nome" required>
-                    </div>
-                    <a href="index.html">Salvar Alterações</a>
-                </form>
+        <main class="caixa perfil">
+            <h1>Perfil</h1>
+
+            <form class="form perfil-form">
+                <div class="campo">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" value="Maria Luisa Campos">
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" value="email@com">
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" value="11 99999-9999">
+                </div>
+
+                <div class="campo">
+                    <label for="data">Data de Nascimento:</label>
+                    <input class="nao-editavel"
+                        type="text"
+                        id="data"
+                        name="data"
+                        value="01/01/1900"
+                        readonly>
+                </div>
+
+                <div class="campo">
+                    <label for="cpf">CPF:</label>
+                    <input class="nao-editavel"
+                        type="text"
+                        id="cpf"
+                        name="cpf"
+                        value="111.111.111-11"
+                        readonly>
+                </div>
+
+                <div class="campo">
+                    <label for="usuario">Usuário:</label>
+                    <input class="nao-editavel"
+                        type="text"
+                        id="usuario"
+                        name="usuario"
+                        value="Malu Campos"
+                        readonly>
+                </div>
+                <a href="perfil.html" class="botao-salvar">Salvar alterações</a>
+            </form>
         </main>
     </body>
 </html>

@@ -1,14 +1,40 @@
 body {
     margin: 0;
     font-family: "Jersey 10", sans-serif;
-    background-image: url("imagens/fundo.png");
+    background-image: url("imagens/fundo-topo.png"), url("imagens/grama.png");
+    background-repeat: no-repeat, repeat-y;
+     background-size: 100% auto, 100% auto;
     color: #000;
 }
 
-header {
+.cabecalho {
     display: flex;
-    justify-content: center;
-    padding-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-top: 30px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    max-width: 850px;
+    background-color: #ff4f79;
+    border-radius: 12px;
+    box-shadow: 0 6px 8px #ffd166;
+    padding: 8px 20px;
+}
+
+.menu a {
+    color: #000;
+    text-decoration: none;
+    font-size: 32px;
+}
+
+.menu a.ativo {
+    text-decoration: underline;
 }
 
 .logo {
@@ -58,6 +84,11 @@ header {
     box-shadow: 0 4px 8px #2f80ed;
 }
 
+.campo input.nao-editavel {
+    background-color: #2f80ed;
+    box-shadow: 0 4px 8px #00c4a8;
+}
+
 .form a {
     margin: 20px 0 10px;
     display: inline-block;
@@ -81,8 +112,6 @@ header {
     align-items: center;
     gap: 0;
     margin-top: 20px;
-
-    
 }
 
 .novo-cadastro p {
@@ -114,4 +143,331 @@ header {
     color: #000;
     font-weight: 400;
     font-size: 32px;
+}
+
+.form a.botao-salvar {
+    align-self: center;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff4f79;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    width: auto;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 32px;
+    box-shadow: 0 4px 8px #00c4a8;
+}
+
+.ranking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.podio {
+    width: 420px;
+    max-width: 80%;
+    margin-top: 40px;
+}
+
+.ranking-global {
+    width: 700px;
+    max-width: 80%;
+    margin: 20px auto 60px;
+    padding: 25px 35px 35px;
+    background-color: #2f80ed;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px #ff4f79;
+}
+
+.ranking-global h1 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.ranking-global table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ranking-global th,
+.ranking-global td {
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+td.titulo-tabela {
+    font-size: 32px;
+    text-decoration: underline;
+}
+
+.podio-container {
+    position: relative;
+    width: 520px;
+    margin: 40px auto 0;
+}
+
+.podio {
+    width: 520px;
+    max-width: 520px;
+    display: block;
+}
+
+.nomes-podio {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    font-size: 27px;
+}
+
+.nome-j2 {
+    position: relative;
+    left: 18px;
+}
+
+.nome-j1 {
+    position: relative;
+}
+
+.nome-j3 {
+    position: relative;
+    left: -18px;
+}
+
+
+.novo-jogo {
+    width: 500px;
+    padding: 30px 45px 40px;
+    margin: 40px auto;
+}
+
+.novo-jogo h1 {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 45px;
+}
+
+.form-novo-jogo h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.dimensoes-tabuleiro {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+
+.dimensao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dimensao label {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.dimensao input {
+    width: 55px;
+    height: 35px;
+    background-color: #00c4a8;
+    border: none;
+    border-radius: 8px;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 24px;
+    text-align: center;
+    box-shadow: 0 4px 8px #2f80ed;
+}
+
+.modalidades {
+    width: 230px;
+    margin: 0 auto 30px;
+}
+
+.modalidade {
+    margin-bottom: 18px;
+    font-size: 26px;
+}
+
+.modalidade input {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    accent-color: #00c4a8;
+}
+
+a.botao-iniciar {
+    display: block;
+    width: 170px;
+    margin: 20px auto 0;
+    padding: 10px;
+    background-color: #00c4a8;
+    color: #000;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 28px;
+    box-shadow: 0 4px 8px #2f80ed;
+
+}
+
+.fim-jogo {
+    width: 420px;
+    margin: 40px auto;
+    padding: 35px 40px 40px;
+    text-align: center;
+}
+
+.fim-jogo h1 {
+    font-size: 48px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 35px;
+}
+
+.resultado h2 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.resultado p {
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.botoes-fim {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a.botao-fim {
+    display: block;
+    width: 190px;
+    margin-top: 12px;
+    padding: 10px;
+    background-color: #00c4a8;
+    box-shadow: 0 4px 8px #2f80ed;
+    color: #000;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 28px;
+}
+
+.jogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.painel-jogo {
+    width: 750px;
+    margin-top: 25px;
+    padding: 10px 25px;
+    background-color: #2f80ed;
+    box-shadow: 0 4px 8px #00c4a8;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.painel-jogo h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.informacoes-jogo {
+    display: flex;
+    justify-content: space-around;
+}
+
+.informacoes-jogo p {
+    margin: 5px;
+    font-size: 20px;
+}
+
+.informacoes-jogo div p:first-child {
+    font-weight: bold;
+}
+
+.tabuleiro {
+    width: 700px;
+
+    margin-top: 60px;
+    margin-bottom: 50px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.tabuleiro img {
+    width: 110px;
+    margin: 25px auto;
+}
+
+a.botao-desistir {
+    display: block;
+    width: 220px;
+    padding: 10px;
+    margin-bottom: 70px;
+    background-color: #00c4a8;
+    box-shadow: 0 4px 8px #2f80ed;
+    color: #000;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 26px;
+}
+
+.historico {
+    width: 760px;
+    margin-bottom: 50px;
+    padding: 20px 30px 30px;
+    background-color: #2f80ed;
+    box-shadow: 0 4px 8px #00c4a8;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.historico h2 {
+    font-size: 32px;
+    font-weight: 400;
+
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.historico table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.historico td {
+    padding: 8px;
+    text-align: center;
+    font-size: 18px;
+}
+
+td.titulo-historico {
+    font-weight: bold;
+    font-size: 20px;
 }

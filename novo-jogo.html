@@ -1,0 +1,92 @@
+<!-- Planejamento dessa pagina:
+ MEU PERFIL
+
+Nome completo
+[ Nome ]
+
+E-mail
+[ email@email.com ]
+
+Telefone
+[ 19 99999-9999 ]
+
+Data de nascimento
+[ 01/01/2000 ]        ← desabilitado
+
+CPF
+[ 000.000.000-00 ]    ← desabilitado
+
+Username
+[ malu123 ]           ← desabilitado
+
+(disabled nos campos que não são editáveis.)
+
+[ Salvar alterações ]
+-->
+<!DOCTYPE html> 
+<html lang="pt-br">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Whack-a-Mole</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="imagens/icon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="cabecalho">
+            <img class="logo" src="imagens/logo.png" alt="Whack-a-Mole">
+
+            <nav class="menu">
+                <a href="novo-jogo.html" class="ativo">Jogo</a>
+                <a href="ranking.html">Ranking</a>
+                <a href="perfil.html" >Meu perfil</a>
+                <a href="index.html">Sair</a>
+            </nav>
+        </header>
+        <main>
+             <section class="caixa novo-jogo">
+                <h1>Nova Partida</h1>
+                <form class="form-novo-jogo">
+                    <h2>Tamanho do tabuleiro</h2>
+                    <div class="dimensoes-tabuleiro">
+                        <div class="dimensao">
+                            <label for="linhas">Linhas</label>
+                            <input type="number"
+                                id="linhas"
+                                name="linhas">
+                        </div>
+                        <div class="dimensao">
+                            <label for="colunas">Colunas</label>
+                            <input type="number"
+                                id="colunas"
+                                name="colunas">
+                        </div>
+                    </div>
+                    <h2>Modalidade</h2>
+                    <div class="modalidades">
+                        <div class="modalidade">
+                            <input type="radio"
+                                id="classica"
+                                name="modalidade"
+                                value="classica">
+                            <label for="classica">Clássica</label>
+                        </div>
+                        <div class="modalidade">
+                            <input type="radio"
+                                id="explosiva"
+                                name="modalidade"
+                                value="explosiva">
+                            <label for="explosiva">Explosiva</label>
+                        </div>
+                    </div>
+                </form>
+                <a href="jogo.html" class="botao-iniciar">
+                    Iniciar partida
+                </a>
+            </section>
+        </main>
+    </body>
+</html>

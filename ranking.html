@@ -12,3 +12,84 @@
 3   jogador03     Explosiva     4x8         74           10
 ...
 -->
+<!DOCTYPE html> 
+<html lang="pt-br">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Whack-a-Mole</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="imagens/icon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="cabecalho">
+            <img class="logo" src="imagens/logo.png" alt="Whack-a-Mole">
+
+            <nav class="menu">
+                <a href="novo-jogo.html">Jogo</a>
+                <a href="ranking.html" class="ativo">Ranking</a>
+                <a href="perfil.html">Meu perfil</a>
+                <a href="index.html">Sair</a>
+            </nav>
+        </header>
+        <main class="ranking">
+                <div class="podio-container">
+                        <img class="podio" src="imagens/podium.gif" alt="Pódio dos três melhores jogadores">
+                        <div class="nomes-podio">
+                                <div class="nome-j2">J2</div>
+                                <div class="nome-j1">J1</div>
+                                <div class="nome-j3">J3</div>
+                        </div>
+                </div>
+
+                <section class="ranking-global">
+                        <h1>Ranking Global</h1>
+                        <table>
+                                <tr>
+                                        <td class="titulo-tabela">Jogador</td>
+                                        <td class="titulo-tabela">Tabuleiro</td>
+                                        <td class="titulo-tabela">Modalidade</td>
+                                        <td class="titulo-tabela">Pontuação</td>
+                                        <td class="titulo-tabela">Nível</td>
+                                </tr>
+
+                                <tr>
+                                        <td>J1</td>
+                                        <td>8x8</td>
+                                        <td>clássico</td>
+                                        <td>90</td>
+                                        <td>10</td>
+                                </tr>
+
+                                <tr>
+                                        <td>J2</td>
+                                        <td>5x7</td>
+                                        <td>explosivo</td>
+                                        <td>76</td>
+                                        <td>7</td>
+                                </tr>
+
+                                <tr>
+                                        <td>J3</td>
+                                        <td>5x5</td>
+                                        <td>clássico</td>
+                                        <td>54</td>
+                                        <td>6</td>
+                                </tr>
+
+                                <tr>
+                                        <td>J4</td>
+                                        <td>4x4</td>
+                                        <td>explosivo</td>
+                                        <td>23</td>
+                                        <td>5</td>
+                                </tr>
+                        </table>
+                </section>
+
+        </main>
+    </body>
+</html>

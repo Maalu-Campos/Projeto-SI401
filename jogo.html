@@ -63,3 +63,136 @@ Deseja jogar novamente?
 
 [ Nova partida ]   [ Voltar ]//
 -->
+
+<!-- Planejamento dessa pagina:
+ MEU PERFIL
+
+Nome completo
+[ Nome ]
+
+E-mail
+[ email@email.com ]
+
+Telefone
+[ 19 99999-9999 ]
+
+Data de nascimento
+[ 01/01/2000 ]        ← desabilitado
+
+CPF
+[ 000.000.000-00 ]    ← desabilitado
+
+Username
+[ malu123 ]           ← desabilitado
+
+(disabled nos campos que não são editáveis.)
+
+[ Salvar alterações ]
+-->
+<!DOCTYPE html> 
+<html lang="pt-br">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Whack-a-Mole</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="imagens/icon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="cabecalho">
+            <img class="logo" src="imagens/logo.png" alt="Whack-a-Mole">
+
+            <nav class="menu">
+                <a href="novo-jogo.html" class="ativo">Jogo</a>
+                <a href="ranking.html">Ranking</a>
+                <a href="perfil.html" >Meu perfil</a>
+                <a href="index.html">Sair</a>
+            </nav>
+        </header>
+        <main>
+             <section class="jogo">
+            <section class="painel-jogo">
+                <h1>Nível 3</h1>
+                <div class="informacoes-jogo">
+                    <div>
+                        <p>Tempo restante</p>
+                        <p>00:14</p>
+                    </div>
+                    <div>
+                        <p>Modalidade</p>
+                        <p>clássico</p>
+                    </div>
+                    <div>
+                        <p>Acertos</p>
+                        <p>18</p>
+                    </div>
+                    <div>
+                        <p>Precisão</p>
+                        <p>92%</p>
+                    </div>
+                    <div>
+                        <p>Necessário</p>
+                        <p>90%</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
+            </section>
+
+            <a href="novo-jogo.html" class="botao-desistir">
+                Desistir da partida
+            </a>
+            <section class="historico">
+                <h2>Histórico de partidas</h2>
+                <table>
+                    <tr class="titulo-historico">
+                        <td>Jogador</td>
+                        <td>Tabuleiro</td>
+                        <td>Modalidade</td>
+                        <td>Pontuação</td>
+                        <td>Nível</td>
+                        <td>Data/hora</td>
+                    </tr>
+                    <tr>
+                        <td>Malu</td>
+                        <td>4x4</td>
+                        <td>clássico</td>
+                        <td>42</td>
+                        <td>5</td>
+                        <td>29/09 15:54</td>
+                    </tr>
+                    <tr>
+                        <td>Malu</td>
+                        <td>5x7</td>
+                        <td>explosivo</td>
+                        <td>23</td>
+                        <td>7</td>
+                        <td>29/09 23:24</td>
+                    </tr>
+                </table>
+            </section>
+
+        </section>
+        </main>
+    </body>
+</html>
