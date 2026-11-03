@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+        <script src="script.js" defer></script>
     </head>
     <body>
         <header class="cabecalho">
@@ -24,40 +25,71 @@
         <main>
              <section class="caixa novo-jogo">
                 <h1>Nova Partida</h1>
-                <form class="form-novo-jogo">
-                    <h2>Tamanho do tabuleiro</h2>
-                    <div class="dimensoes-tabuleiro">
-                        <div class="dimensao">
-                            <label for="linhas">Linhas</label>
-                            <input type="number"
-                                id="linhas"
-                                name="linhas">
+                    <form class="form-novo-jogo" id="form-configuracao" novalidate>
+                        <h2>Tamanho do tabuleiro</h2>
+
+                        <div class="dimensoes-tabuleiro">
+                            <div class="dimensao">
+                                <label for="linhas">Linhas</label>
+
+                                <input
+                                    type="number"
+                                    id="linhas"
+                                    name="linhas"
+                                    min="1"
+                                    max="64"
+                                    step="1"
+                                    required>
+                            </div>
+
+                            <div class="dimensao">
+                                <label for="colunas">Colunas</label>
+
+                                <input
+                                    type="number"
+                                    id="colunas"
+                                    name="colunas"
+                                    min="1"
+                                    max="64"
+                                    step="1"
+                                    required>
+                            </div>
                         </div>
-                        <div class="dimensao">
-                            <label for="colunas">Colunas</label>
-                            <input type="number"
-                                id="colunas"
-                                name="colunas">
+
+                        <h2>Modalidade</h2>
+
+                        <div class="modalidades">
+                            <div class="modalidade">
+                                <input
+                                    type="radio"
+                                    id="classica"
+                                    name="modalidade"
+                                    value="classica">
+
+                                <label for="classica">Clássica</label>
+                            </div>
+
+                            <div class="modalidade">
+                                <input
+                                    type="radio"
+                                    id="explosiva"
+                                    name="modalidade"
+                                    value="explosiva">
+
+                                <label for="explosiva">Explosiva</label>
+                            </div>
                         </div>
-                    </div>
-                    <h2>Modalidade</h2>
-                    <div class="modalidades">
-                        <div class="modalidade">
-                            <input type="radio"
-                                id="classica"
-                                name="modalidade"
-                                value="classica">
-                            <label for="classica">Clássica</label>
-                        </div>
-                        <div class="modalidade">
-                            <input type="radio"
-                                id="explosiva"
-                                name="modalidade"
-                                value="explosiva">
-                            <label for="explosiva">Explosiva</label>
-                        </div>
-                    </div>
-                </form>
+
+                        <p
+                            id="mensagem-erro"
+                            class="mensagem-erro"
+                            role="alert">
+                        </p>
+
+                        <button type="submit" class="botao-iniciar">
+                            Iniciar partida
+                        </button>
+                    </form>
                 <a href="jogo.html" class="botao-iniciar">
                     Iniciar partida
                 </a>

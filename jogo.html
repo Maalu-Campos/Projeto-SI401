@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+        <script src="script.js" defer></script>
     </head>
     <body>
         <header class="cabecalho">
@@ -32,7 +33,7 @@
                     </div>
                     <div>
                         <p>Modalidade</p>
-                        <p>clássico</p>
+                        <p id="modalidade-jogo">—</p>
                     </div>
                     <div>
                         <p>Acertos</p>
@@ -49,24 +50,26 @@
                 </div>
             </section>
 
-            <section class="tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-                <img src="imagens/marmota-normal.png" alt="Buraco do tabuleiro">
-            </section>
+            <p
+                id="mensagem-erro"
+                class="mensagem-erro"
+                role="alert">
+            </p>
+
+            <p id="voltar-configuracao" hidden>
+                <a href="novo-jogo.html">
+                    Voltar e escolher as configurações
+                </a>
+            </p>
+
+            <div class="area-tabuleiro">
+                <div
+                    id="tabuleiro"
+                    class="tabuleiro"
+                    role="group"
+                    aria-label="Tabuleiro do jogo">
+                </div>
+            </div>
 
             <a href="novo-jogo.html" class="botao-desistir">
                 Desistir da partida

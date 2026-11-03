@@ -312,19 +312,26 @@ td.titulo-tabela {
     accent-color: #00c4a8;
 }
 
-a.botao-iniciar {
+.botao-iniciar {
     display: block;
     width: 170px;
     margin: 20px auto 0;
     padding: 10px;
+
     background-color: #00c4a8;
     color: #000;
+
+    border: none;
     border-radius: 10px;
+
     text-align: center;
     text-decoration: none;
-    font-size: 28px;
-    box-shadow: 0 4px 8px #2f80ed;
 
+    font-family: inherit;
+    font-size: 28px;
+
+    box-shadow: 0 4px 8px #2f80ed;
+    cursor: pointer;
 }
 
 .fim-jogo {
@@ -409,19 +416,71 @@ a.botao-fim {
     font-weight: bold;
 }
 
-.tabuleiro {
-    width: 700px;
+/* Área que permite rolar quando existem muitas colunas. */
+.area-tabuleiro {
+    width: calc(100% - 32px);
+    max-width: 700px;
 
-    margin-top: 60px;
-    margin-bottom: 50px;
+    margin: 60px auto 50px;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow-x: auto;
 }
 
-.tabuleiro img {
-    width: 110px;
-    margin: 25px auto;
+
+/* O número de colunas será definido pelo JavaScript. */
+.tabuleiro {
+    display: grid;
+    gap: 12px;
+}
+
+
+.buraco {
+    display: block;
+    box-sizing: border-box;
+
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto;
+    padding: 0;
+
+    border: none;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    clip-path: none;
+
+    cursor: pointer;
+}
+
+.buraco img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+/* Destaca o buraco quando selecionado pelo teclado. */
+.buraco:focus-visible {
+    outline: 3px solid #2f80ed;
+    outline-offset: 2px;
+}
+
+/* Aparência das mensagens de erro. */
+.mensagem-erro {
+    max-width: 700px;
+    margin: 16px auto;
+
+    color: #8b0000;
+    font-size: 24px;
+    text-align: center;
+}
+
+
+/* Não ocupa espaço quando não existe mensagem. */
+.mensagem-erro:empty {
+    display: none;
 }
 
 a.botao-desistir {
