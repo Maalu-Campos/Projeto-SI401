@@ -1,6 +1,5 @@
-// PARTE DA PESSOA 1: configuração e criação do tabuleiro.
+// PARTE ANA JÚLIA SANTOS: configuração e criação do tabuleiro.
 
-// Estas variáveis também poderão ser utilizadas pelos colegas.
 let linhas = 0;
 let colunas = 0;
 let modalidade = "";
