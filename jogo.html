@@ -10,7 +10,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
         <script src="script.js" defer></script>
+        <script src="pontuacao.js" defer></script>
         <script src="personagens.js" defer></script>
+        
     </head>
     <body>
         <header class="cabecalho">
@@ -26,30 +28,30 @@
         <main>
              <section class="jogo">
             <section class="painel-jogo">
-                <h1>Nível 3</h1>
+                <h1 id="nivel-jogo">Nível 1</h1>
                 <div class="informacoes-jogo">
-                    <div>
-                        <p>Tempo restante</p>
-                        <p>00:14</p>
-                    </div>
-                    <div>
-                        <p>Modalidade</p>
-                        <p id="modalidade-jogo">—</p>
-                    </div>
-                    <div>
-                        <p>Acertos</p>
-                        <p>18</p>
-                    </div>
-                    <div>
-                        <p>Precisão</p>
-                        <p>92%</p>
-                    </div>
-                    <div>
-                        <p>Necessário</p>
-                        <p>90%</p>
-                    </div>
+             <div>
+       <p>Tempo restante</p>
+       <p id="tempo-restante">00:00</p>
                 </div>
-            </section>
+                <div>
+                    <p>Modalidade</p>
+                    <p id="modalidade-jogo">—</p>
+                </div>
+                <div>
+                    <p>Acertos</p>
+                    <p id="acertos-jogo">0</p>
+                </div>
+                <div>
+                    <p>Precisão</p>
+                    <p id="precisao-jogo">0%</p>
+                </div>
+                <div>
+                    <p>Necessário</p>
+                    <p id="necessario-jogo">—</p>
+                </div>
+                </div>
+                </section>
 
             <p
                 id="mensagem-erro"
