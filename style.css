@@ -543,16 +543,13 @@ td.titulo-historico {
 
 .buraco__base {
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
-
-
-/* Área da marmota ou da bomba */
 
 .buraco__personagem {
     position: absolute;
 
-    z-index: 1;
+    z-index: 2;
 
     left: 50%;
     bottom: 20%;
