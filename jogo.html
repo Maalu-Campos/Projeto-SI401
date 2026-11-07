@@ -12,6 +12,7 @@
         <script src="script.js" defer></script>
         <script src="pontuacao.js" defer></script>
         <script src="personagens.js" defer></script>
+        <script src="niveis.js" defer></script>
         
     </head>
     <body>
@@ -65,10 +66,13 @@
                 </a>
             </p>
 
+            <p id="mensagem-transicao" role="status" hidden></p>
+
             <div class="area-tabuleiro">
                 <div
                     id="tabuleiro"
                     class="tabuleiro"
+                    data-demo-autostart="false"
                     role="group"
                     aria-label="Tabuleiro do jogo">
                 </div>

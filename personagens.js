@@ -150,11 +150,19 @@
         agendarProximaAparicao();
     }
 
-    function aparecer() {
-        estado.temporizadorProxima = null;
-        if (!estado.ativo) return;
+function aparecer() {
+    estado.temporizadorProxima = null;
+    if (!estado.ativo) return;
 
-        const buraco = escolherBuraco();
+    if (window.Niveis) {
+        let tempoRestante = window.Niveis.obterTempoRestante();
+
+        if (tempoRestante < estado.tempoVisivelMs) {
+            return;
+        }
+    }
+
+    const buraco = escolherBuraco();
         if (!buraco) {
             estado.ativo = false;
             emitir('jogo:erro-personagens');
@@ -187,11 +195,17 @@
         estado.temporizadorOcultar = window.setTimeout(esconderPersonagem, estado.tempoVisivelMs);
     }
 
-    function tratarClique(evento) {
-        const buraco = evento.target.closest('.buraco');
-        if (!buraco || !tabuleiro.contains(buraco) || !estado.ativo) return;
+function tratarClique(evento) {
+    const buraco = evento.target.closest('.buraco');
+    if (!buraco || !tabuleiro.contains(buraco) || !estado.ativo) return;
 
-        const personagem = estado.personagemAtual;
+    if (window.Niveis) {
+        if (window.Niveis.obterTempoRestante() <= 0) {
+            return;
+        }
+    }
+
+    const personagem = estado.personagemAtual;
         if (!personagem || personagem.buraco !== buraco) {
             emitir('jogo:buraco-vazio-clicado', { buracoId: identificadorDoBuraco(buraco) });
             return;
