@@ -703,10 +703,20 @@ td.titulo-historico {
     font-size: 28px;
 }
 
+#tabuleiro,
 #tabuleiro .buraco {
-    cursor: url("imagens/martelo_normal.png?v=2"), auto;
+    cursor: none;
 }
 
-#tabuleiro.martelo-batendo .buraco {
-    cursor: url("imagens/martelo_batendo.png?v=2"), auto;
+.cursor-martelo {
+    position: fixed;
+
+    width: 64px;
+    height: 64px;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    display: none;
 }

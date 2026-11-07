@@ -52,16 +52,39 @@ let tabuleiro = document.getElementById("tabuleiro");
 
 if (tabuleiro !== null) {
 
-    tabuleiro.addEventListener("mousedown", function() {
-        tabuleiro.classList.add("martelo-batendo");
+    let martelo = document.createElement("img");
+
+    martelo.src = "imagens/martelo_normal.png";
+    martelo.className = "cursor-martelo";
+
+    document.body.appendChild(martelo);
+
+
+    tabuleiro.addEventListener("mousemove", function(evento) {
+
+        martelo.style.display = "block";
+
+        martelo.style.left = (evento.clientX - 20) + "px";
+        martelo.style.top = (evento.clientY - 20) + "px";
     });
+
+
+    tabuleiro.addEventListener("mousedown", function() {
+
+        martelo.src = "imagens/martelo_batendo.png";
+    });
+
 
     tabuleiro.addEventListener("mouseup", function() {
-        tabuleiro.classList.remove("martelo-batendo");
+
+        martelo.src = "imagens/martelo_normal.png";
     });
 
+
     tabuleiro.addEventListener("mouseleave", function() {
-        tabuleiro.classList.remove("martelo-batendo");
+
+        martelo.style.display = "none";
+        martelo.src = "imagens/martelo_normal.png";
     });
 
 }
