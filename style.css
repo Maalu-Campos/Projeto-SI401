@@ -702,3 +702,11 @@ td.titulo-historico {
     font-family: "Jersey 10", sans-serif;
     font-size: 28px;
 }
+
+#tabuleiro .buraco {
+    cursor: url("imagens/martelo_normal.png"), auto;
+}
+
+#tabuleiro.martelo-batendo .buraco {
+    cursor: url("imagens/martelo_batendo.png"), auto;
+}

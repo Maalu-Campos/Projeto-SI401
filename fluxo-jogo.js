@@ -47,3 +47,21 @@ if (
         + "&colunas=" + colunas
         + "&modalidade=" + modalidade;
 }
+
+let tabuleiro = document.getElementById("tabuleiro");
+
+if (tabuleiro !== null) {
+
+    tabuleiro.addEventListener("mousedown", function() {
+        tabuleiro.classList.add("martelo-batendo");
+    });
+
+    tabuleiro.addEventListener("mouseup", function() {
+        tabuleiro.classList.remove("martelo-batendo");
+    });
+
+    tabuleiro.addEventListener("mouseleave", function() {
+        tabuleiro.classList.remove("martelo-batendo");
+    });
+
+}
