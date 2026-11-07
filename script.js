@@ -5,8 +5,6 @@ let colunas = 0;
 let modalidade = "";
 
 
-// Verifica se as configurações estão corretas.
-// Retorna uma mensagem de erro ou um texto vazio.
 function validarConfiguracoes(linhas, colunas, modalidade) {
     if (!Number.isInteger(linhas) || !Number.isInteger(colunas)) {
         return "Informe números inteiros para linhas e colunas.";
@@ -30,9 +28,7 @@ function validarConfiguracoes(linhas, colunas, modalidade) {
 }
 
 
-// Executada quando o jogador envia o formulário.
 function enviarConfiguracoes(evento) {
-    // Impede que o formulário saia da página antes da verificação.
     evento.preventDefault();
 
     linhas = Number(document.getElementById("linhas").value);
@@ -52,19 +48,16 @@ function enviarConfiguracoes(evento) {
 
     document.getElementById("mensagem-erro").textContent = erro;
 
-    // Se existir um erro, não continua.
     if (erro !== "") {
         return;
     }
 
-    // Abre o jogo levando as configurações no endereço.
     window.location.href = "jogo.html?linhas=" + linhas
         + "&colunas=" + colunas
         + "&modalidade=" + modalidade;
 }
 
 
-// Cria os buracos do tabuleiro.
 function criarTabuleiro() {
     let tabuleiro = document.getElementById("tabuleiro");
 
@@ -72,10 +65,8 @@ function criarTabuleiro() {
         return;
     }
 
-    // Apaga os buracos anteriores para não duplicar o tabuleiro.
     tabuleiro.innerHTML = "";
 
-    // Define quantas colunas serão desenhadas.
     tabuleiro.style.gridTemplateColumns =
         "repeat(" + colunas + ", minmax(44px, 1fr))";
 
@@ -104,7 +95,6 @@ function criarTabuleiro() {
 }
 
 
-// Recebe as configurações quando a página do jogo é aberta.
 function carregarConfiguracoes() {
     let parametros = new URLSearchParams(window.location.search);
 
@@ -112,7 +102,6 @@ function carregarConfiguracoes() {
     colunas = Number(parametros.get("colunas"));
     modalidade = parametros.get("modalidade");
 
-    // Verifica novamente, pois o endereço pode ser alterado.
     let erro = validarConfiguracoes(linhas, colunas, modalidade);
 
     document.getElementById("mensagem-erro").textContent = erro;
@@ -122,7 +111,6 @@ function carregarConfiguracoes() {
         return;
     }
 
-    // Mostra a modalidade escolhida no painel.
     if (modalidade === "classica") {
         document.getElementById("modalidade-jogo").textContent =
             "Clássica";
@@ -135,8 +123,6 @@ function carregarConfiguracoes() {
 }
 
 
-// Conecta o formulário à função de envio.
-// Só executa esta parte na página de configuração.
 let formulario = document.getElementById("form-configuracao");
 
 if (formulario !== null) {
@@ -144,7 +130,6 @@ if (formulario !== null) {
 }
 
 
-// Só carrega o tabuleiro quando estiver na página do jogo.
 if (document.getElementById("tabuleiro") !== null) {
     carregarConfiguracoes();
 }

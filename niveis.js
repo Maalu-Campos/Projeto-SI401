@@ -1,3 +1,4 @@
+//PARTE PEDRO: controle de níveis, tempo e transições entre níveis.
 "use strict";
 
 const DURACAO_NIVEL_MS = 20000;

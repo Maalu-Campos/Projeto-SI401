@@ -1,4 +1,4 @@
-// PARTE MARIA: 
+// PARTE MARIA: controle de fluxo do jogo, incluindo início, pausa, reinício e fim de partida.
 
 document.addEventListener("jogo:partida-perdida", function(evento) {
 
