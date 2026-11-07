@@ -1,7 +1,5 @@
-// PARTE MARIA: integração entre início, fim da partida e nova partida.
+// PARTE MARIA: 
 
-
-// Quando o jogador perde, leva o resultado para fim-jogo.html.
 document.addEventListener("jogo:partida-perdida", function(evento) {
 
     let resumo = evento.detail;
@@ -22,7 +20,6 @@ document.addEventListener("jogo:partida-perdida", function(evento) {
 });
 
 
-// Parte executada apenas na página fim-jogo.html.
 let campoPontuacao = document.getElementById("resultado-pontuacao");
 let campoNivel = document.getElementById("resultado-nivel");
 let botaoJogarNovamente = document.getElementById("jogar-novamente");

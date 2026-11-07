@@ -44,7 +44,7 @@
     function removerPersonagem(buraco) {
         const personagem = buraco.querySelector('.buraco__personagem');
         if (personagem) personagem.remove();
-        buraco.classList.remove('buraco--ocupado', 'buraco--acertado', 'buraco--bomba-clicada');
+        buraco.classList.remove('buraco--ocupado', 'buraco--acertado', 'buraco--bomba-clicada', 'buraco--saindo' );
     }
 
     function limparTemporizadores() {
@@ -67,58 +67,71 @@
     }
 
     function criarPersonagem(tipo) {
-        const area = document.createElement('span');
-        area.className = 'buraco__personagem';
+    const area = document.createElement('span');
+    const imagem = document.createElement('img');
 
-        if (tipo === 'toupeira') {
-            const imagem = document.createElement('img');
-            imagem.className = 'personagem personagem--toupeira';
-            imagem.src = 'imagens/marmota-normal.png';
-            imagem.alt = '';
-            imagem.setAttribute('aria-hidden', 'true');
-            area.appendChild(imagem);
-        } else {
-            const bomba = document.createElement('span');
-            const pavio = document.createElement('span');
-            const faísca = document.createElement('span');
-            bomba.className = 'personagem personagem--bomba';
-            bomba.setAttribute('aria-hidden', 'true');
-            pavio.className = 'bomba__pavio';
-            faísca.className = 'bomba__faisca';
-            bomba.append(pavio, faísca);
-            area.appendChild(bomba);
-        }
-        return area;
+    area.className = 'buraco__personagem';
+
+    if (tipo === 'toupeira') {
+        imagem.className = 'personagem personagem--toupeira';
+        imagem.src = 'imagens/marmota.png';
+    } else {
+        imagem.className = 'personagem personagem--bomba';
+        imagem.src = 'imagens/bomba.png';
     }
+
+    imagem.alt = '';
+    imagem.setAttribute('aria-hidden', 'true');
+
+    area.appendChild(imagem);
+
+    return area;
+}
 
     function mostrarPersonagem(buraco, tipo) {
         buraco.classList.add('buraco--ocupado');
         buraco.appendChild(criarPersonagem(tipo));
     }
 
-    function mostrarFeedback(buraco, acertou) {
-        const classe = acertou ? 'buraco--acertado' : 'buraco--bomba-clicada';
-        buraco.classList.add(classe);
+   function mostrarFeedback(buraco, acertou) {
+    const classe = acertou
+        ? 'buraco--acertado'
+        : 'buraco--bomba-clicada';
+
+    buraco.classList.add(classe);
+
+    const area = buraco.querySelector('.buraco__personagem');
+
+    if (area) {
+        const imagem = document.createElement('img');
 
         if (acertou) {
-            const area = document.createElement('span');
-            const imagem = document.createElement('img');
-            area.className = 'buraco__personagem';
             imagem.className = 'personagem personagem--acerto';
-            imagem.src = 'imagens/acerto.gif';
-            imagem.alt = '';
-            imagem.setAttribute('aria-hidden', 'true');
-            area.appendChild(imagem);
-            const personagemAtual = buraco.querySelector('.buraco__personagem');
-            if (personagemAtual) personagemAtual.replaceWith(area);
+            imagem.src = 'imagens/marmota_atingida.gif';
+        } else {
+            imagem.className = 'personagem personagem--explosao';
+            imagem.src = 'imagens/bomba.gif';
         }
 
-        const temporizador = window.setTimeout(() => {
-            estado.temporizadoresFeedback.delete(temporizador);
-            removerPersonagem(buraco);
-        }, 300);
-        estado.temporizadoresFeedback.add(temporizador);
+        imagem.alt = '';
+        imagem.setAttribute('aria-hidden', 'true');
+
+        area.innerHTML = '';
+        area.appendChild(imagem);
     }
+
+    const duracao = acertou ? 1120 : 1000;
+
+    const temporizador = window.setTimeout(function() {
+        estado.temporizadoresFeedback.delete(temporizador);
+
+        removerPersonagem(buraco);
+        agendarProximaAparicao();
+
+    }, duracao);
+
+    estado.temporizadoresFeedback.add(temporizador);
+}
 
     function agendarProximaAparicao() {
         if (estado.ativo) {
@@ -139,16 +152,31 @@
         }
     }
 
-    function esconderPersonagem() {
-        const personagem = estado.personagemAtual;
-        if (!personagem) return;
-        window.clearTimeout(estado.temporizadorOcultar);
-        estado.temporizadorOcultar = null;
-        estado.personagemAtual = null;
+   function esconderPersonagem() {
+    const personagem = estado.personagemAtual;
+
+    if (!personagem) {
+        return;
+    }
+
+    window.clearTimeout(estado.temporizadorOcultar);
+
+    estado.temporizadorOcultar = null;
+    estado.personagemAtual = null;
+
+    personagem.buraco.classList.add('buraco--saindo');
+
+    const temporizador = window.setTimeout(function() {
+        estado.temporizadoresFeedback.delete(temporizador);
+
         removerPersonagem(personagem.buraco);
         registrarFimDaAparicao(personagem, false);
         agendarProximaAparicao();
-    }
+
+    }, 250);
+
+    estado.temporizadoresFeedback.add(temporizador);
+}
 
 function aparecer() {
     estado.temporizadorProxima = null;
@@ -220,7 +248,6 @@ function tratarClique(evento) {
         });
         mostrarFeedback(buraco, acertou);
         registrarFimDaAparicao(personagem, true);
-        agendarProximaAparicao();
     }
 
     function definirModalidade(valor) {

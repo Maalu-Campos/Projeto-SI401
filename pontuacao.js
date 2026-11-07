@@ -109,11 +109,13 @@
 
     // Clicar em uma bomba desconta 1 ponto.
     document.addEventListener('jogo:bomba-clicada', () => {
-        estado.pontuacao--;
-        estado.bombasClicadas++;
-        estado.bombasNivel++;
-        atualizarPainel();
-    });
+    estado.pontuacao--;
+    // A bomba também penaliza o resultado do nível.
+    estado.acertosNivel--;
+    estado.bombasClicadas++;
+    estado.bombasNivel++;
+    atualizarPainel();
+});
 
     // Buracos vazios e toupeiras perdidas não alteram os pontos.
     // As toupeiras perdidas já foram contadas quando apareceram.

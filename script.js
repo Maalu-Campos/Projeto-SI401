@@ -96,7 +96,8 @@ function criarTabuleiro() {
         let imagem = document.createElement("img");
         imagem.src = "imagens/buraco-vazio.png";
         imagem.alt = "";
-
+        imagem.className = "buraco__base";
+        
         buraco.appendChild(imagem);
         tabuleiro.appendChild(buraco);
     }
