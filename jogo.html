@@ -13,6 +13,7 @@
         <script src="pontuacao.js" defer></script>
         <script src="personagens.js" defer></script>
         <script src="niveis.js" defer></script>
+        <script src="fluxo-jogo.js" defer></script>
         
     </head>
     <body>
@@ -66,7 +67,12 @@
                 </a>
             </p>
 
-            <p id="mensagem-transicao" role="status" hidden></p>
+            <div id="mensagem-transicao" class="mensagem-transicao" hidden>
+                <p id="texto-transicao" role="status"></p>
+                <button id="botao-proximo-nivel" type="button">
+                    Começar próximo nível
+                </button>
+            </div>
 
             <div class="area-tabuleiro">
                 <div

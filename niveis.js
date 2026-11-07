@@ -130,18 +130,18 @@ function finalizarNivelAtual() {
         );
 
         let mensagem = document.getElementById("mensagem-transicao");
+        let textoTransicao = document.getElementById("texto-transicao");
+        let botaoProximoNivel = document.getElementById("botao-proximo-nivel");
 
-        mensagem.textContent =
+        textoTransicao.textContent =
             "Nível " + nivelConcluido + " concluído! "
-            + "Precisão: " + Math.floor(resumo.precisao) + "%. "
-            + "Preparando nível " + controleNiveis.nivel + "...";
+            + "Precisão: " + Math.floor(resumo.precisao) + "%.";
+
+        botaoProximoNivel.textContent =
+            "Começar nível " + controleNiveis.nivel;
 
         mensagem.hidden = false;
 
-        controleNiveis.temporizadorTransicao = setTimeout(
-            iniciarNivelAtual,
-            PAUSA_ENTRE_NIVEIS_MS
-        );
     } else {
         controleNiveis.ativo = false;
 
@@ -175,6 +175,12 @@ function iniciarControleNiveis() {
 
     return true;
 }
+
+let botaoProximoNivel = document.getElementById("botao-proximo-nivel");
+
+botaoProximoNivel.addEventListener("click", function() {
+    iniciarNivelAtual();
+});
 
 window.Niveis = {
     iniciarPartida: iniciarControleNiveis,

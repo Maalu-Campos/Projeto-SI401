@@ -1,28 +1,3 @@
-<!-- Planejamento dessa pagina:
- MEU PERFIL
-
-Nome completo
-[ Nome ]
-
-E-mail
-[ email@email.com ]
-
-Telefone
-[ 19 99999-9999 ]
-
-Data de nascimento
-[ 01/01/2000 ]        ← desabilitado
-
-CPF
-[ 000.000.000-00 ]    ← desabilitado
-
-Username
-[ malu123 ]           ← desabilitado
-
-(disabled nos campos que não são editáveis.)
-
-[ Salvar alterações ]
--->
 <!DOCTYPE html> 
 <html lang="pt-br">
     <head>
@@ -34,6 +9,7 @@ Username
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+        <script src="fluxo-jogo.js" defer></script>
     </head>
     <body>
         <header class="cabecalho">
@@ -50,12 +26,15 @@ Username
             <h1>Partida Encerrada</h1>
             <div class="resultado">
                 <h2>Pontuação</h2>
-                <p>52</p>
+                <p id="resultado-pontuacao">0</p>
+
                 <h2>Nível</h2>
-                <p>3</p>
+                <p id="resultado-nivel">1</p>
             </div>
             <div class="botoes-fim">
-                <a href="jogo.html" class="botao-fim">
+                <a href="novo-jogo.html"
+                    id="jogar-novamente"
+                    class="botao-fim">
                     Jogar novamente
                 </a>
                 <a href="novo-jogo.html" class="botao-fim">
