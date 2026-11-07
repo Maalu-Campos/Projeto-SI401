@@ -704,9 +704,9 @@ td.titulo-historico {
 }
 
 #tabuleiro .buraco {
-    cursor: url("imagens/martelo_normal.png"), auto;
+    cursor: url("imagens/martelo_normal.png?v=2"), auto;
 }
 
 #tabuleiro.martelo-batendo .buraco {
-    cursor: url("imagens/martelo_batendo.png"), auto;
+    cursor: url("imagens/martelo_batendo.png?v=2"), auto;
 }
